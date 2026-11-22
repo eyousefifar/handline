@@ -1,0 +1,15 @@
+target/
+.gradle/
+build/
+.idea/
+*.iml
+.DS_Store
+android/.gradle/
+android/**/build/
+android/local.properties
+.build/
+ios/**/.build/
+ios/DerivedData/
+*.xcuserstate
+xcuserdata/
+helper/build/
