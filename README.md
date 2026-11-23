@@ -21,7 +21,8 @@ Tier A is texts, contacts, history, and call state. Tier B, two-way call audio, 
 ## Layout
 
 ```
-docs/                 product, protocol, threat model, tests, ADRs
+docs/                 product, protocol, threat model, tests, UI, ADRs
+design/ui/            HTML screen reference the apps follow
 handline-core/        Rust reference and the scenario tests
 android/protocol      Kotlin handshake and frames
 android/logic         call book, SIM memory, helper install, copy

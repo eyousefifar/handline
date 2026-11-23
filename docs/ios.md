@@ -8,10 +8,11 @@ iOS 17 or later. The tested code is the Swift package `ios/HandlineKit`. SwiftUI
 
 | Book event | CallKit adapter |
 | --- | --- |
-| incoming invite | report a new incoming call, including on the lock screen when iOS has woken the app |
+| incoming invite | report a new incoming call, with the contact name, including on the lock screen when iOS has woken the app |
 | active | fulfill the answer action |
 | ended or declined | end the call with the matching reason |
-| out of range | end live calls and report the bag phone as unavailable |
+| mute | stop sending uplink audio; speaker stays a local route and is not a protocol message |
+| out of range | end live calls, report the bag phone as unavailable, and leave a strip until the link returns |
 
 The adapter is a thin map. Tests use a fake presenter and assert the calls it received. The package does not import CallKit, so the tests run on macOS.
 
@@ -19,7 +20,7 @@ Background Bluetooth is `bluetooth-central` plus state restoration. iOS may susp
 
 ## Storage
 
-Messages, contacts, and history live in the app. The tested book never calls `CNContactStore`. A contact added on the iPhone is a protocol message to the bag phone, not an insert into the iPhone address book.
+Messages, contacts, and history live in the app. The tested book never calls `CNContactStore`. A contact added on the iPhone is a protocol message to the bag phone, not an insert into the iPhone address book. A one-time code also posts a local notification. The iPhone's own SIM, if present, is never used for a bag-phone call or text.
 
 ## Language
 

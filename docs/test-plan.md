@@ -23,7 +23,7 @@ A green CI run means the protocol and the call book behave. It does not mean a c
 
 ## Layer 2 — other languages
 
-`swift test` and `gradle test` load `testdata/reference.json` and check the QR, both hellos, both traffic keys, both Finished messages, the Hello plaintext, a replay, and a tampered tag.
+`swift run --package-path ios/HandlineKit HandlineCheck` and `./gradlew test` in `android/` load `testdata/reference.json` and check the QR, both hellos, both traffic keys, both Finished messages, the Hello plaintext, a replay, and a tampered tag.
 
 The same suites check the call book, SIM memory, the code detector, the audio probe, and the install state machine.
 
@@ -45,6 +45,10 @@ Not run in CI. This workspace had no Android SDK and no phone on `sixpath@192.16
 | Outgoing call from the iPhone UI dials on the bag phone | not run |
 | Walk out of range and back | not run |
 | Tier B only after the owner types the wireless-debugging code | not run |
+| Pairing-code window stays open while the digits are entered from the notification | not run |
 | Helper removed, Tier A still runs | not run |
+| Bag phone stays silent while the hand phone rings | not run |
+| One-time code raises a notification on the hand phone | not run |
+| Hand phone's own SIM is unused by Handline | not run |
 
 `sixpath` is the place to run `adb` when a phone is plugged in. It is not a place to disassemble someone else's app.

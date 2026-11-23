@@ -31,4 +31,4 @@ Bag-phone ids start at 1. Hand-phone ids are the same counter with bit 63 set. H
 
 ## UI shells
 
-The shells are thin. They render link status, the QR or the scanner, the message list (codes marked), contacts, a keypad, and the helper-code screen. They do not implement cryptography themselves. System call UI on iOS is a `CallPresenting` boundary: the tested book says when a call is ringing, and a CallKit adapter (compiled with the iOS SDK) is the production presenter. Tests use a fake presenter, so they do not need a radio or a SIM.
+The shells are thin. They follow `design/ui/index.html` and `docs/ui.md`: link status, the QR or the scanner, the message list (codes marked), contacts, a keypad, and the helper-code screen. They do not implement cryptography themselves. System call UI on iOS is a `CallPresenting` boundary: the tested book says when a call is ringing, and a CallKit adapter (compiled with the iOS SDK) is the production presenter. Tests use a fake presenter, so they do not need a radio or a SIM.

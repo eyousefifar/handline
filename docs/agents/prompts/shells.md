@@ -2,7 +2,7 @@
 
 You may edit only `android/app/**` and `ios/App/**`.
 
-Read `docs/product.md`, `docs/android.md`, and `docs/ios.md`. Bind screens to the existing call book, copy map, and helper state machine. Do not change frame bytes, key derivation, or permissions that those docs do not list.
+Read `docs/ui.md`, `design/ui/index.html`, `docs/product.md`, `docs/android.md`, and `docs/ios.md`. Match those screens and those words. Bind them to the existing call book, copy map, and helper state machine. Do not change frame bytes, key derivation, or permissions that those docs do not list.
 
 Do not download an APK, do not run a decompiler, and do not copy screens or strings from another product.
 

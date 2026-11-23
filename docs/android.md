@@ -23,7 +23,9 @@ A connected-device foreground service owns the Bluetooth socket. SMS and call ev
 
 ## OEM battery screens
 
-Some phones still freeze a foreground service. The in-app copy points at the system battery screen and does not pretend a vendor-specific intent always exists. If the link drops because the process was frozen, the hand phone shows out of range and reconnects when the process runs again.
+Some phones still freeze a foreground service. The in-app copy points at the system battery screen and does not pretend a vendor-specific intent always exists. On Samsung it also points at Sleeping apps. On Xiaomi and similar phones it points at Autostart. If the link drops because the process was frozen, the hand phone shows out of range and reconnects when the process runs again.
+
+The status notification stays visible while the link is enabled. That is what keeps the process in a bag. The bag phone does not start its own ringtone for a call the hand phone is presenting. Setup buttons open About phone, Developer options, and Wireless debugging. Searching Settings remains the written fallback.
 
 ## What the unit tests cover
 

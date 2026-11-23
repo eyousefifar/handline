@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handline UI reference</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-link="linked" data-audio="a">
+  <header class="studio">
+    <div>
+      <p class="mark" aria-hidden="true">
+        <svg width="64" height="14" viewBox="0 0 64 14">
+          <path class="mark-line" d="M2 7 C 14 2.5, 24 11.5, 36 7 S 56 3.5, 62 7"></path>
+        </svg>
+      </p>
+      <h1 data-k="studioTitle">Screen reference</h1>
+      <p class="lede" data-k="studioLede">Two phones. The bag phone keeps the SIM and stays quiet. The hand phone is the inbox. Nothing here pairs or dials.</p>
+    </div>
+    <div class="toggles" role="group" aria-label="Review states">
+      <div class="seg" data-group="lang">
+        <button type="button" data-set="lang" data-value="en" aria-pressed="true">English</button>
+        <button type="button" data-set="lang" data-value="fa" aria-pressed="false">فارسی</button>
+      </div>
+      <div class="seg" data-group="link">
+        <button type="button" data-set="link" data-value="linked" aria-pressed="true" data-k="togLinked">Linked</button>
+        <button type="button" data-set="link" data-value="away" aria-pressed="false" data-k="togAway">Out of reach</button>
+      </div>
+      <div class="seg" data-group="audio">
+        <button type="button" data-set="audio" data-value="a" aria-pressed="true" data-k="togA">Texts only</button>
+        <button type="button" data-set="audio" data-value="b" aria-pressed="false" data-k="togB">Two-way sound</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="index" aria-label="Screens">
+      <p class="index-label" data-k="bagRole">Bag phone</p>
+      <button type="button" data-go="bag" data-screen="permissions" data-k="navPermissions">Permissions</button>
+      <button type="button" data-go="bag" data-screen="qr" data-k="navQr">Pairing code</button>
+      <button type="button" data-go="bag" data-screen="home" data-k="navHome">Home</button>
+      <button type="button" data-go="bag" data-screen="audio" data-k="navAudio">Call sound</button>
+      <button type="button" data-go="bag" data-screen="unpair" data-k="navUnpair">Unpair</button>
+      <p class="index-label" data-k="handRole">Hand phone</p>
+      <button type="button" data-go="hand" data-screen="scan" data-k="navScan">Scan</button>
+      <button type="button" data-go="hand" data-screen="texts" data-k="navTexts">Texts</button>
+      <button type="button" data-go="hand" data-screen="thread" data-k="navThread">Thread</button>
+      <button type="button" data-go="hand" data-screen="keypad" data-k="navKeypad">Keypad</button>
+      <button type="button" data-go="hand" data-screen="recents" data-k="navRecents">Recents</button>
+      <button type="button" data-go="hand" data-screen="people" data-k="navPeople">People</button>
+      <button type="button" data-go="hand" data-screen="incoming" data-k="navIncoming">Incoming call</button>
+      <button type="button" data-go="hand" data-screen="active" data-k="navActive">In call</button>
+      <button type="button" data-go="hand" data-screen="code" data-k="navCode">Code notification</button>
+    </nav>
+
+    <main class="stage">
+      <section class="device">
+        <p class="device-caption"><span data-k="bagRole">Bag phone</span><span class="os" dir="ltr">Android 12+</span></p>
+        <div class="phone" data-phone="bag">
+          <div class="glass">
+            <div class="status"><span dir="ltr">09:41</span><span class="sig" aria-hidden="true">●●●</span></div>
+
+            <div class="sheet" data-bag="permissions" hidden>
+              <h2 data-k="permTitle">This phone stays in the bag</h2>
+              <p class="sub" data-k="permBody">Its calls and texts show on the iPhone beside you. Nothing is uploaded.</p>
+              <ul class="reasons">
+                <li><strong data-k="pNear">Nearby devices</strong> <span data-k="pNearWhy">The Bluetooth link.</span></li>
+                <li><strong data-k="pSms">Texts</strong> <span data-k="pSmsWhy">Show them on the iPhone, and send replies.</span></li>
+                <li><strong data-k="pPeople">Contacts and history</strong> <span data-k="pPeopleWhy">Names and photos. They stay inside Handline on the iPhone.</span></li>
+                <li><strong data-k="pPhone">Phone</strong> <span data-k="pPhoneWhy">Place and answer with this SIM.</span></li>
+                <li><strong data-k="pNote">Notifications</strong> <span data-k="pNoteWhy">A quiet status line, and the 6-digit field.</span></li>
+                <li><strong data-k="pBat">Battery</strong> <span data-k="pBatWhy">Ask once, so Android does not sleep the link.</span></li>
+              </ul>
+              <button class="primary" type="button" data-go="bag" data-screen="qr" data-k="cont">Continue</button>
+              <button class="texty" type="button" data-go="bag" data-screen="home" data-k="soundLater">Call sound can wait</button>
+            </div>
+
+            <div class="sheet photo" data-bag="qr" hidden>
+              <h2 data-k="qrTitle">Let the iPhone read this</h2>
+              <p class="sub" data-k="qrOnce">Once, for five minutes.</p>
+              <div class="qr" aria-hidden="true"></div>
+              <p class="timer" dir="ltr">4:12</p>
+              <p class="fine" data-k="qrSample">Sample picture. Not a live code.</p>
+              <button class="primary" type="button" data-go="bag" data-screen="home" data-k="paired">Paired</button>
+              <button class="texty" type="button" data-go="bag" data-screen="audio" data-k="soundOptional">Call sound is optional</button>
+            </div>
+
+            <div class="sheet" data-bag="home">
+              <div class="link-state">
+                <div class="filament" aria-hidden="true"></div>
+                <p class="state when-linked"><span data-k="linked">Linked</span></p>
+                <p class="state dim when-linked"><span data-k="quiet">quiet</span></p>
+                <p class="state when-away" data-k="outOfRange">The other phone is out of reach</p>
+              </div>
+              <div class="scene when-away" aria-hidden="true"></div>
+              <h2 class="when-linked" data-k="homeUp">The iPhone can ring. This phone stays silent.</h2>
+              <h2 class="when-away" data-k="homeDown">Handline will link again when the iPhone is back.</h2>
+              <div class="rowline">
+                <span class="k" data-k="syncLabel">Texts and contacts</span>
+                <strong class="when-linked" data-k="syncOn">On this phone, shown over there</strong>
+                <strong class="when-away" data-k="syncWait">Waiting for the link</strong>
+              </div>
+              <button class="rowline go" type="button" data-go="bag" data-screen="audio">
+                <span class="k" data-k="navAudio">Call sound</span>
+                <strong class="when-a" data-k="audioUnavailable">Call audio is not available on this phone</strong>
+                <strong class="when-b" data-k="audioReady">Both directions are open</strong>
+              </button>
+              <button class="texty danger" type="button" data-go="bag" data-screen="unpair" data-k="navUnpair">Unpair</button>
+            </div>
+
+            <div class="sheet" data-bag="audio" hidden>
+              <h2 data-k="audioTitle">Call sound, if this phone allows it</h2>
+              <ol class="steps">
+                <li data-k="step1">On Wi-Fi, turn on Wireless debugging. Leave USB debugging off.</li>
+                <li data-k="step2">Tap the Wireless debugging title, then Pair device with pairing code. Leave that window open.</li>
+                <li data-k="step3">Type the six digits into the Handline notification.</li>
+              </ol>
+              <button class="ghost" type="button" data-k="openWd">Open Wireless debugging</button>
+              <div class="notify">
+                <p class="note-app">Handline</p>
+                <p class="note-title" data-k="pair">Type the 6-digit code</p>
+                <p class="note-body" data-k="pairHint">The window on screen has to stay open. A new window is a new code.</p>
+                <form class="code-row" dir="ltr">
+                  <input inputmode="numeric" maxlength="6" value="194826" aria-label="code">
+                  <button type="button" data-k="pairBtn">Pair</button>
+                </form>
+              </div>
+              <p class="result when-a" data-k="audioUnavailable">Call audio is not available on this phone</p>
+              <p class="result ok when-b" data-k="audioReadyLong">Two-way sound is on. Texts already worked without it.</p>
+            </div>
+
+            <div class="sheet" data-bag="unpair" hidden>
+              <h2 data-k="unpairTitle">Unpair this iPhone?</h2>
+              <p class="sub" data-k="unpairBody">The link is deleted on this phone. The iPhone needs a new code.</p>
+              <button class="primary missed-fill" type="button" data-go="bag" data-screen="qr" data-k="unpairDo">Unpair</button>
+              <button class="texty" type="button" data-go="bag" data-screen="home" data-k="cancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="device">
+        <p class="device-caption"><span data-k="handRole">Hand phone</span><span class="os" dir="ltr">iOS 17+</span></p>
+        <div class="phone" data-phone="hand">
+          <div class="glass">
+            <div class="status"><span dir="ltr">09:41</span><span class="sig" aria-hidden="true">●●●</span></div>
+
+            <div class="sheet" data-hand="scan" hidden>
+              <h2 data-k="scanTitle">Read the code on the Android phone</h2>
+              <div class="finder" aria-hidden="true"></div>
+              <p class="sub" data-k="noAccount">This phone has no account.</p>
+            </div>
+
+            <div class="sheet" data-hand="texts">
+              <p class="strip when-away" data-k="outOfRange">The other phone is out of reach</p>
+              <h2 data-k="navTexts">Texts</h2>
+              <div class="filament tick when-linked" aria-hidden="true"></div>
+              <div class="rows">
+                <button class="row" type="button" data-go="hand" data-screen="thread">
+                  <span class="avatar" aria-hidden="true"><img src="assets/sara.jpg" alt=""></span>
+                  <span class="who">
+                    <span class="line1"><b data-k="nameSara">Sara</b><small data-k="sim2">SIM 2</small></span>
+                    <span class="peek" data-k="msgDinner">Dinner at 8?</span>
+                  </span>
+                </button>
+                <button class="row" type="button" data-go="hand" data-screen="thread" data-thread="bank">
+                  <span class="avatar" aria-hidden="true"></span>
+                  <span class="who">
+                    <span class="line1"><b data-k="nameBank">Bank</b><small data-k="sim1">SIM 1</small><em data-k="codeWord">Code</em></span>
+                    <span class="peek" data-k="msgCode">Your code is 482193</span>
+                  </span>
+                </button>
+                <button class="row" type="button">
+                  <span class="avatar" aria-hidden="true"><img src="assets/cafe.jpg" alt=""></span>
+                  <span class="who">
+                    <span class="line1"><b data-k="nameCafe">Cafe</b><small data-k="sim2">SIM 2</small></span>
+                    <span class="peek" data-k="msgLunch">Lunch at 1234 Main</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="sheet" data-hand="thread" hidden>
+              <button class="back" type="button" data-go="hand" data-screen="texts" data-k="back">Texts</button>
+              <h2 data-k="nameBank">Bank</h2>
+              <p class="meta"><span class="chip" data-k="sim1">SIM 1</span><span data-k="remembered">remembered</span></p>
+              <div class="bubble in">
+                <p data-k="msgCode">Your code is 482193</p>
+                <em data-k="codeWord">Code</em>
+              </div>
+              <p class="fine" data-k="replyFrom">Replies leave from the Android phone.</p>
+              <form class="composer">
+                <input data-k-placeholder="compose" placeholder="Message" disabled class="when-away">
+                <input data-k-placeholder="compose" placeholder="Message" class="when-linked">
+                <button type="button" data-k="send">Send</button>
+              </form>
+              <p class="fine when-away" data-k="syncWait">Waiting for the link</p>
+            </div>
+
+            <div class="sheet" data-hand="keypad" hidden>
+              <p class="strip when-away" data-k="outOfRange">The other phone is out of reach</p>
+              <p class="dial" dir="ltr">+1 415 555 0134</p>
+              <p class="fine" data-k="notIphoneLine">This calls with the Android phone. The iPhone line is not used.</p>
+              <div class="sim-pick">
+                <button type="button" data-k="sim2">SIM 2</button>
+                <button type="button" class="quiet" data-k="ask">Ask every time</button>
+              </div>
+              <div class="pad" dir="ltr">
+                <button type="button">1</button><button type="button">2</button><button type="button">3</button>
+                <button type="button">4</button><button type="button">5</button><button type="button">6</button>
+                <button type="button">7</button><button type="button">8</button><button type="button">9</button>
+                <button type="button">*</button><button type="button">0</button><button type="button">#</button>
+              </div>
+              <button class="call" type="button" data-k="call">Call</button>
+            </div>
+
+            <div class="sheet" data-hand="recents" hidden>
+              <h2 data-k="navRecents">Recents</h2>
+              <div class="rows">
+                <div class="row static missed">
+                  <span class="avatar" aria-hidden="true"><img src="assets/sara.jpg" alt=""></span>
+                  <span class="who"><span class="line1"><b data-k="nameSara">Sara</b><small data-k="missed">Missed</small></span></span>
+                  <span class="peek" data-k="sim2">SIM 2</span>
+                </div>
+                <div class="row static">
+                  <span class="avatar" aria-hidden="true"></span>
+                  <span class="who"><span class="line1"><b data-k="nameBank">Bank</b><small data-k="answered">Answered</small></span></span>
+                  <span class="peek" data-k="sim1">SIM 1</span>
+                </div>
+                <div class="row static">
+                  <span class="avatar" aria-hidden="true"><img src="assets/cafe.jpg" alt=""></span>
+                  <span class="who"><span class="line1"><b data-k="nameCafe">Cafe</b><small data-k="outgoing">Outgoing</small></span></span>
+                  <span class="peek" data-k="sim2">SIM 2</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sheet" data-hand="people" hidden>
+              <h2 data-k="navPeople">People</h2>
+              <p class="sub" data-k="insideOnly">Only inside Handline. Not added to iPhone Contacts.</p>
+              <div class="rows">
+                <div class="row static">
+                  <span class="avatar" aria-hidden="true"><img src="assets/sara.jpg" alt=""></span>
+                  <span class="who"><span class="line1"><b data-k="nameSara">Sara</b></span></span>
+                  <span class="peek" data-k="sim2">SIM 2</span>
+                </div>
+                <div class="row static">
+                  <span class="avatar" aria-hidden="true"></span>
+                  <span class="who"><span class="line1"><b data-k="nameBank">Bank</b></span></span>
+                  <span class="peek" data-k="sim1">SIM 1</span>
+                </div>
+                <div class="row static">
+                  <span class="avatar" aria-hidden="true"><img src="assets/cafe.jpg" alt=""></span>
+                  <span class="who"><span class="line1"><b data-k="nameCafe">Cafe</b></span></span>
+                  <span class="peek" data-k="sim2">SIM 2</span>
+                </div>
+              </div>
+              <button class="ghost" type="button" data-k="add">Add a person</button>
+            </div>
+
+            <div class="sheet night" data-hand="incoming" hidden>
+              <p class="tag" data-k="incoming">Incoming</p>
+              <h2 data-k="nameSara">Sara</h2>
+              <p class="sub" data-k="sim2">SIM 2</p>
+              <div class="call-actions">
+                <button class="round no" type="button" data-go="hand" data-screen="recents" data-k="decline">Decline</button>
+                <button class="round yes" type="button" data-go="hand" data-screen="active" data-k="answer">Answer</button>
+              </div>
+              <p class="fine" data-k="systemNote">Stand-in for the system call screen.</p>
+            </div>
+
+            <div class="sheet night" data-hand="active" hidden>
+              <p class="tag" data-k="nameSara">Sara</p>
+              <h2 class="timer-hero" dir="ltr">00:42</h2>
+              <p class="banner when-a" data-k="voiceStays">You can answer here. Voice stays on the Android phone.</p>
+              <p class="banner ok when-b" data-k="voiceBoth">Voice is open both ways.</p>
+              <div class="call-grid">
+                <button type="button" data-k="mute">Mute</button>
+                <button type="button" data-k="speaker">Speaker</button>
+                <button type="button" data-go="hand" data-screen="keypad" data-k="navKeypad">Keypad</button>
+              </div>
+              <button class="round no end" type="button" data-go="hand" data-screen="recents" data-k="end">End</button>
+            </div>
+
+            <div class="sheet night lock" data-hand="code" hidden>
+              <p class="lock-time" dir="ltr">09:41</p>
+              <div class="lock-note">
+                <p class="note-app">Handline</p>
+                <p class="note-title" data-k="nameBank">Bank</p>
+                <p class="note-body" data-k="codeWord">Code</p>
+                <p class="lock-code" dir="ltr">482193</p>
+              </div>
+            </div>
+
+            <nav class="tabs" aria-label="Hand">
+              <div class="tabtick" aria-hidden="true"></div>
+              <button type="button" data-go="hand" data-screen="texts" data-k="navTexts">Texts</button>
+              <button type="button" data-go="hand" data-screen="keypad" data-k="navKeypad">Keypad</button>
+              <button type="button" data-go="hand" data-screen="recents" data-k="navRecents">Recents</button>
+              <button type="button" data-go="hand" data-screen="people" data-k="navPeople">People</button>
+            </nav>
+          </div>
+        </div>
+        <p class="device-caption fine" data-k="callKitNote">The incoming screen lists what the system call UI must carry. The real lock screen stays the system one.</p>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
